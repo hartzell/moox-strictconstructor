@@ -2,5 +2,7 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+0.001     2013-04-13 15:54:04 America/Los_Angeles
+
         - Initial release, based on ideas from haag and tobyink on
           #moose irc channel.
