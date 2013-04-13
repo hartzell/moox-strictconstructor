@@ -1,5 +1,20 @@
 package Method::Generate::Constructor::Role::StrictConstructor;
 
+# ABSTRACT: a role to make Moo constructos strict.
+
+=head1 DESCRIPTION
+
+This role wraps L<Method::Generate::Constructor/_assign_new> with a bit of code
+that ensures that all arguments passed to the constructor are valid init_args
+for the class.
+
+=head2 STANDING ON THE SHOULDERS OF ...
+
+This code would not exist without the examples in L<MooX::InsideOut> and
+L<MooseX::StrictConstructor>.
+
+=cut
+
 use Moo::Role;
 use B ();
 
@@ -28,5 +43,13 @@ EOF
 
     return $body;
 };
+
+=head1 SEE ALSO
+
+=for :list
+* L<MooX::InsideOut>
+* L<MooseX::StrictConstructor>
+
+=cut
 
 1;
