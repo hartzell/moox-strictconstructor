@@ -32,7 +32,7 @@ that implements the strictness was lifed from L<MooseX::StrictConstructor>.
 
 use strictures 1;
 
-use Moo ();
+use Moo       ();
 use Moo::Role ();
 
 sub import {
@@ -46,9 +46,6 @@ sub import {
         Moo->_constructor_maker_for($target),
         'Method::Generate::Constructor::Role::StrictConstructor',
     );
-
-    # make sure we have our own constructor
-#    Moo->_constructor_maker_for($target);
 }
 
 =head1 SEE ALSO
