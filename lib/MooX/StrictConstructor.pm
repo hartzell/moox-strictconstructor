@@ -1,4 +1,6 @@
+## no critic (RequireUseStrict, RequireUseWarnings)
 package MooX::StrictConstructor;
+## critic;
 
 # ABSTRACT: Make your Moo-based object constructors blow up on unknown attributes.
 
@@ -26,7 +28,7 @@ declare, then it dies. This is a great way to catch small typos.
 =head2 STANDING ON THE SHOULDERS OF ...
 
 Most of this package was lifted from L<MooX::InsideOut> and most of the Role
-that implements the strictness was lifed from L<MooseX::StrictConstructor>.
+that implements the strictness was lifted from L<MooseX::StrictConstructor>.
 
 =head2 SUBVERTING STRICTNESS
 

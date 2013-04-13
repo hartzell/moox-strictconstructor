@@ -1,6 +1,8 @@
+## no critic (RequireUseStrict, RequireUseWarnings)
 package Method::Generate::Constructor::Role::StrictConstructor;
+## critic;
 
-# ABSTRACT: a role to make Moo constructos strict.
+# ABSTRACT: a role to make Moo constructors strict.
 
 =head1 DESCRIPTION
 
@@ -25,7 +27,8 @@ around _assign_new => sub {
 
     my @attrs = map { B::perlstring($_) . ' => 1,' }
         grep {defined}
-        map  { $_->{init_arg} } values(%$spec);
+        map  { $_->{init_arg} }    ## no critic (ProhibitAccessOfPrivateData)
+        values(%$spec);
 
     my $body .= <<"EOF";
 
