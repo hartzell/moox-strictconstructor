@@ -136,14 +136,14 @@ TODO: {
 }
 
 TODO: {
-    local $TODO = "I'm confused";
+    local $TODO = "Moose trick.  Doesn't work 'cuz my code runs before object built.";
     is( exception { Tricky->new( thing => 1, spy => 99 ) },
         undef,
         'can work around strict constructor by deleting params in BUILD()' );
 }
 
 TODO: {
-    local $TODO = "I'm confused";
+    local $TODO = "Moose trick.  Doesn't work 'cuz my code runs before object built.";
     like(
         exception { Tricky->new( thing => 1, agent => 99 ) },
         qr/unknown attribute.+: agent/,
