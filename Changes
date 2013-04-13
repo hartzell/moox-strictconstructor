@@ -1,0 +1,6 @@
+Revision history for {{$dist->name}}
+
+{{$NEXT}}
+
+        - Initial release, based on ideas from haag and tobyink on
+          #moose irc channel.
