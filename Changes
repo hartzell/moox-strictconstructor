@@ -2,6 +2,9 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+        - Fix pod formatting
+        - Add github metadata to META.*
+
 0.002     2013-04-13 16:04:18 America/Los_Angeles
 
         - Change license from none to Perl_5.

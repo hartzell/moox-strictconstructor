@@ -58,14 +58,14 @@ code runs before the object is constructed the C<BUILD> trick will not work.
 
 =over 4
 
-=item inheritance
+=item Inheritance
 
 A class that uses L<MooX::StrictConstructor> but extends another class that
 does not will not be handled properly.  This code hooks into the constructor
 as it is being strung up (literally) and that happens in the parent class,
 not the one using strict.
 
-=item subverting strictness
+=item Subverting strictness
 
 L<MooseX::StrictConstructor> documents a trick
 for subverting strictness using BUILD.  This does not work here because
