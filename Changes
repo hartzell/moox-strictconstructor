@@ -2,6 +2,8 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+0.003     2013-04-14 09:08:33 America/Los_Angeles
+
         - Fix pod formatting
         - Add github metadata to META.*
 
