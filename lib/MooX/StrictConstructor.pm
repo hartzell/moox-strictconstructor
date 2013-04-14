@@ -73,15 +73,16 @@ sub import {
 =head1 BUGS
 
 =for :list
-
-* A class that uses L<MooX::StrictConstructor> but extends another class that
-  does not will not be handled properly.  This code hooks into the constructor
-  as it is being strung up (literally) and that happens in the parent class,
-  not the one using strict.
-* L<MooseX::StrictConstructor> documents a trick for subverting strictness
-  using BUILD.  This does not work here because strictness is enforced in the
-  early stage of object construction but the BUILD subs are run after the
-  objects has been built.
+= Inheritance
+A class that uses L<MooX::StrictConstructor> but extends another class that
+does not will not be handled properly.  This code hooks into the constructor
+as it is being strung up (literally) and that happens in the parent class,
+not the one using strict.
+= Subverting strictness
+L<MooseX::StrictConstructor> documents a trick
+for subverting strictness using BUILD.  This does not work here because
+strictness is enforced in the early stage of object construction but the
+BUILD subs are run after the objects has been built.
 
 =head1 SEE ALSO
 
