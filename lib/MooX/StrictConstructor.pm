@@ -57,6 +57,11 @@ use strictures 1;
 use Moo 1.001000 ();    # $Moo::MAKERS support
 use Moo::Role ();
 
+#
+# The gist of this code was copied directly from Graham Knop (HAARG)'s
+# MooX::InsideOut, specifically its import sub.  It has diverged a bit to
+# handle goal specific differences.
+#
 sub import {
     my $class  = shift;
     my $target = caller;

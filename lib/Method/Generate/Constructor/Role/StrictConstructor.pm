@@ -20,6 +20,13 @@ L<MooseX::StrictConstructor>.
 use Moo::Role;
 use B ();
 
+#
+# The gist of this code was copied directly from Dave Rolsky's (DROLSKY)
+# MooseX::StrictConstructor, specifically from
+# MooseX::StrictConstructor::Trait::Method::Constructor as a modifier around
+# _generate_BUILDALL.  It has diverged only slightly to handle Moo-specific
+# differences.
+#
 around _assign_new => sub {
     my $orig = shift;
     my $self = shift;
