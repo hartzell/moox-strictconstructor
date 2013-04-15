@@ -54,7 +54,7 @@ code runs before the object is constructed the C<BUILD> trick will not work.
 
 use strictures 1;
 
-use Moo       ();
+use Moo 1.001000 ();    # $Moo::MAKERS support
 use Moo::Role ();
 
 sub import {
