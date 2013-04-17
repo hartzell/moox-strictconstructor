@@ -1,6 +1,4 @@
-## no critic (RequireUseStrict, RequireUseWarnings)
 package Method::Generate::Constructor::Role::StrictConstructor;
-## critic;
 
 # ABSTRACT: a role to make Moo constructors strict.
 

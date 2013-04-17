@@ -1,6 +1,4 @@
-## no critic (RequireUseStrict, RequireUseWarnings)
 package MooX::StrictConstructor;
-## critic;
 
 # ABSTRACT: Make your Moo-based object constructors blow up on unknown attributes.
 
