@@ -141,14 +141,11 @@ is( exception { OtherStrictSubclass->new( thing => 1, size => 'large', ) },
     q{strict subclass from parent that doesn't use strict constructor handles known attributes correctly}
 );
 
-TODO: {
-    local $TODO = "Can't deal with inherited constructor yet.";
-    like(
-        exception { OtherStrictSubclass->new( thing => 1, bad => 99 ) },
-        qr/unknown attribute.+: bad/,
-        q{strict subclass from parent that doesn't use strict correctly recognizes bad attribute}
-    );
-}
+like(
+    exception { OtherStrictSubclass->new( thing => 1, bad => 99 ) },
+    qr/unknown attribute.+: bad/,
+    q{strict subclass from parent that doesn't use strict correctly recognizes bad attribute}
+);
 
 TODO: {
     local $TODO = "Moose trick.  Doesn't work 'cuz my code runs before object built.";

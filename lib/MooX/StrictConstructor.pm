@@ -54,6 +54,10 @@ use strictures 1;
 
 use Moo 1.001000 ();    # $Moo::MAKERS support
 use Moo::Role ();
+use Class::Method::Modifiers qw(install_modifier);
+
+use constant
+    CON_ROLE => 'Method::Generate::Constructor::Role::StrictConstructor';
 
 #
 # The gist of this code was copied directly from Graham Knop (HAARG)'s
@@ -67,10 +71,18 @@ sub import {
         die "MooX::StrictConstructor can only be used on Moo classes.";
     }
 
-    Moo::Role->apply_roles_to_object(
-        Moo->_constructor_maker_for($target),
-        'Method::Generate::Constructor::Role::StrictConstructor',
-    );
+    _apply_role($target);
+
+    install_modifier($target, 'after', 'extends', sub {
+        _apply_role($target);
+    });
+}
+
+sub _apply_role {
+    my $target = shift;
+    my $con = Moo->_constructor_maker_for($target);
+    Moo::Role->apply_roles_to_object($con, CON_ROLE)
+        unless Role::Tiny::does_role($con, CON_ROLE);
 }
 
 =head1 BUGS
