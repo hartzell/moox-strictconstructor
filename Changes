@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+        - Merged Graham Knop's fix for applying StrictConstructor to a
+          class that extends other classes.
 
 0.005     2013-04-17 09:35:03 America/Los_Angeles
 

@@ -6,7 +6,7 @@ MooX::StrictConstructor - Make your Moo-based object constructors blow up on unk
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 SYNOPSIS
 
