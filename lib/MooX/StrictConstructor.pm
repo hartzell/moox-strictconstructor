@@ -7,7 +7,7 @@ package MooX::StrictConstructor;
     package My::Class;
 
     use Moo;
-    use Moo::StrictConstructor;
+    use MooX::StrictConstructor;
 
     has 'size' => ( is => 'rw');
 
