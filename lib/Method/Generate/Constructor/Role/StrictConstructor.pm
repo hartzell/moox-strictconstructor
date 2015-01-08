@@ -35,11 +35,13 @@ around _assign_new => sub {
         map  { $_->{init_arg} }    ## no critic (ProhibitAccessOfPrivateData)
         values(%$spec);
 
+    my $state = ($] >= 5.010) ? "use feature 'state'; state" : "my";
+
     my $body .= <<"EOF";
 
     # MooX::StrictConstructor
-    my \%attrs = (@attrs);
-    my \@bad = sort grep { ! \$attrs{\$_} }  keys \%{ \$args };
+    $state \$attrs = { @attrs };
+    my \@bad = sort grep { ! \$attrs->{\$_} }  keys \%{ \$args };
     if (\@bad) {
        Carp::confess("Found unknown attribute(s) passed to the constructor: " .
            join ", ", \@bad);
