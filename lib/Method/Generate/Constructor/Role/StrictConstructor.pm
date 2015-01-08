@@ -30,7 +30,7 @@ around _assign_new => sub {
     my $self = shift;
     my $spec = $_[0];
 
-    my @attrs = map { B::perlstring($_) . ' => 1,' }
+    my @attrs = map { B::perlstring($_) . ' => undef,' }
         grep {defined}
         map  { $_->{init_arg} }    ## no critic (ProhibitAccessOfPrivateData)
         values(%$spec);
@@ -41,7 +41,7 @@ around _assign_new => sub {
 
     # MooX::StrictConstructor
     $state \$attrs = { @attrs };
-    my \@bad = sort grep { ! \$attrs->{\$_} }  keys \%{ \$args };
+    my \@bad = sort grep { ! exists \$attrs->{\$_} }  keys \%{ \$args };
     if (\@bad) {
        Carp::confess("Found unknown attribute(s) passed to the constructor: " .
            join ", ", \@bad);
