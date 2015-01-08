@@ -41,7 +41,7 @@ around _assign_new => sub {
     my \%attrs = (@attrs);
     my \@bad = sort grep { ! \$attrs{\$_} }  keys \%{ \$args };
     if (\@bad) {
-       die("Found unknown attribute(s) passed to the constructor: " .
+       Carp::confess("Found unknown attribute(s) passed to the constructor: " .
            join ", ", \@bad);
     }
 
