@@ -1,3 +1,4 @@
+use strict;                     # redundant, but quiets perlcritic
 package MooX::StrictConstructor;
 
 # ABSTRACT: Make your Moo-based object constructors blow up on unknown attributes.
@@ -50,11 +51,12 @@ code runs before the object is constructed the C<BUILD> trick will not work.
 
 =cut
 
-use strictures 1;
-
 use Moo 1.001000 ();    # $Moo::MAKERS support
 use Moo::Role ();
+
 use Class::Method::Modifiers qw(install_modifier);
+
+use strictures 1;
 
 use constant
     CON_ROLE => 'Method::Generate::Constructor::Role::StrictConstructor';

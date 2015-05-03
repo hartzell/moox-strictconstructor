@@ -1,3 +1,4 @@
+use strict;                     # redundant, but quiets perlcritic
 package Method::Generate::Constructor::Role::StrictConstructor;
 
 # ABSTRACT: a role to make Moo constructors strict.
