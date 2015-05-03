@@ -30,18 +30,20 @@ around _assign_new => sub {
     my $self = shift;
     my $spec = $_[0];
 
-    my @attrs = map { B::perlstring($_) . ' => 1,' }
+    my @attrs = map { B::perlstring($_) . ' => undef,' }
         grep {defined}
         map  { $_->{init_arg} }    ## no critic (ProhibitAccessOfPrivateData)
         values(%$spec);
 
+    my $state = ($] >= 5.010) ? "use feature 'state'; state" : "my";
+
     my $body .= <<"EOF";
 
     # MooX::StrictConstructor
-    my \%attrs = (@attrs);
-    my \@bad = sort grep { ! \$attrs{\$_} }  keys \%{ \$args };
+    $state \$attrs = { @attrs };
+    my \@bad = sort grep { ! exists \$attrs->{\$_} }  keys \%{ \$args };
     if (\@bad) {
-       die("Found unknown attribute(s) passed to the constructor: " .
+       Carp::confess("Found unknown attribute(s) passed to the constructor: " .
            join ", ", \@bad);
     }
 
