@@ -63,6 +63,11 @@ does not will not be handled properly.  This code hooks into the constructor
 as it is being strung up (literally) and that happens in the parent class,
 not the one using strict.
 
+A class that inherits from a L<Moose> based class will discover that the
+L<Moose> class's attributes are disallowed.  Given sufficient L<Moose> meta
+knowledge it might be possible to work around this.  I'd appreciate pull
+requests and or an outline of a solution.
+
 =head2 Subverting strictness
 
 L<MooseX::StrictConstructor> documents a trick
