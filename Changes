@@ -2,6 +2,8 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+0.008     2015-05-11 08:22:24-07:00 America/Los_Angeles
+
         - Improve the POD about bugs and incompatibilities.
 
 0.007     2015-05-03 15:01:45-07:00 America/Los_Angeles
