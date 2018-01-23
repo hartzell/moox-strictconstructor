@@ -2,3 +2,5 @@ MooX-StrictConstructor-*/
 MooX-StrictConstructor-*tar.gz
 local/
 .envrc
+cpanfile
+.build
