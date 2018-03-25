@@ -2,6 +2,8 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+0.010     2018-03-25 10:15:40-07:00 America/Los_Angeles
+
         - Undo the previous "fix" for the minimum perl version.
           The basic requirement is for 5.004 but the tests require
           5.006.
