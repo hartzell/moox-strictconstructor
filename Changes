@@ -2,6 +2,10 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+        - Undo the previous "fix" for the minimum perl version.
+          The basic requirement is for 5.004 but the tests require
+          5.006.
+
 0.009     2018-03-24 14:12:47-07:00 America/Los_Angeles
 
         - Built using current Dist::Zilla, so various things
