@@ -26,7 +26,7 @@ declare, then it dies. This is a great way to catch small typos.
 
 If you would like your exceptions to contain a stack trace, you can enable
 L<Carp::Always>. Previously all exceptions contained traces, but this could
-potentially link sensitive information, eg. if you did
+potentially leak sensitive information, eg. if you did
 
     My::Sensitive::Class->new( password => $sensitive, extra_value => 'foo' );
 
