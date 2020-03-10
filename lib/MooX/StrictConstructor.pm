@@ -24,9 +24,9 @@ Simply loading this module makes your constructors "strict". If your
 constructor is called with an attribute init argument that your class does not
 declare, then it dies. This is a great way to catch small typos.
 
-If you would like your exceptions to contain a stack trace, you can enable
-L<Carp::Always>. Previously all exceptions contained traces, but this could
-potentially leak sensitive information, eg. if you did
+Your application can use L<Carp::Always> to generate stack traces on C<die>.
+Previously all exceptions contained traces, but this could potentially leak
+sensitive information, eg.
 
     My::Sensitive::Class->new( password => $sensitive, extra_value => 'foo' );
 
