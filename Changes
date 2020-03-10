@@ -4,7 +4,8 @@ Revision history for {{$dist->name}}
 
         - Switched from Carp::confess to die in order to avoid leaking
           sensitive data via stack traces. The previous behavior can be
-          enabled in an application by using Carp::Always.
+          enabled in an application by using Carp::Always.  Thanks
+          @jrubinator!
 
 0.010     2018-03-25 10:15:40-07:00 America/Los_Angeles
 
