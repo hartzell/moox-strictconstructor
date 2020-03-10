@@ -24,6 +24,12 @@ Simply loading this module makes your constructors "strict". If your
 constructor is called with an attribute init argument that your class does not
 declare, then it dies. This is a great way to catch small typos.
 
+Your application can use L<Carp::Always> to generate stack traces on C<die>.
+Previously all exceptions contained traces, but this could potentially leak
+sensitive information, e.g.
+
+    My::Sensitive::Class->new( password => $sensitive, extra_value => 'foo' );
+
 =head2 STANDING ON THE SHOULDERS OF ...
 
 Most of this package was lifted from L<MooX::InsideOut> and most of the Role
