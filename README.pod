@@ -90,6 +90,22 @@ L<namespace::clean> to ignore C<new> with something like:
 
   use namespace::clean -except => ['new','meta'];
 
+=head1 CONTRIBUTING
+
+Given an appropriate Perl and L<App-cpanminus>, you can set up a development
+environment like so:
+
+  export PATH=$(pwd)/local/bin:$PATH
+  export PERL5LIB=$(pwd)/local/lib/perl5/
+  cpanm -L local Dist::Zilla
+  dzil authordeps --missing | cpanm -L local
+  dzil listdeps --develop | cpanm -L local
+
+Your changes should pass both the tests (C<t/*>) and the extended tests
+(C<xt/*>).  Dzil can run them all for you:
+
+  dzil xtest
+
 =head1 SEE ALSO
 
 =over 4
