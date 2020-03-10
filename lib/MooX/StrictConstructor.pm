@@ -26,7 +26,7 @@ declare, then it dies. This is a great way to catch small typos.
 
 Your application can use L<Carp::Always> to generate stack traces on C<die>.
 Previously all exceptions contained traces, but this could potentially leak
-sensitive information, eg.
+sensitive information, e.g.
 
     My::Sensitive::Class->new( password => $sensitive, extra_value => 'foo' );
 
