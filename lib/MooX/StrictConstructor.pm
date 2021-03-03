@@ -47,7 +47,7 @@ exception.  Useful?  Only you can tell.
 
    sub BUILDARGS {
        my ($self, %params) = @_;
-       my $spy delete $params{spy};
+       my $spy = delete $params{spy};
        # do something useful with the spy param
        return \%params;
    }
